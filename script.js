@@ -1,7 +1,8 @@
+// ===== ELEMENTS =====
 const generateBtn = document.getElementById("generate-btn");
 const sortBtn = document.getElementById("sort-btn");
 
-// Set Display of Sort Button to None
+//  Display Button to None
 sortBtn.style.display = 'none';
 
 function generateElement() {
@@ -72,12 +73,12 @@ sortBtn.addEventListener("click", () => {
     arrayContainer.appendChild(startingArray);
 
 let swapped = true;
-let steps = 0;
+let ranges = 0;
 while (swapped) {
   swapped = false;
   for (let idx = 0; idx < array.length - 1;idx++) {
     const stepContainer = generateContainer();
-	if (steps != 0) {
+	if (ranges != 0) {
 		fillArrContainer(stepContainer, array);
 		highlightCurrentEls(stepContainer,idx);
 		arrayContainer.appendChild(stepContainer);
@@ -87,7 +88,7 @@ while (swapped) {
       swapElements(array,idx);
       swapped = true;
     }
-	steps++;
+	ranges++;
 	
   }
 } 
